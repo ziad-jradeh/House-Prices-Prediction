@@ -1,9 +1,12 @@
 ### A function to get the description of a column name or a value
 
-
 import json
 
-with open('data\data_description.json', 'r') as file:
+from pathlib import Path
+data_folder = Path("data/")
+file_to_open = data_folder / "data_description.json"
+
+with open(file_to_open, 'r') as file:
     description_dict = json.load(file)
     
 def _get_des(name):
